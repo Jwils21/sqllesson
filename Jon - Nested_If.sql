@@ -22,5 +22,8 @@ Else Begin
 	End
 End
 
-print @op1
-print @op2
+select * from [order] o
+	join Customer c on o.CustomerId = c.id
+	where c.State = @statecode and
+		o.Amount > @op2 and o.Amount < @op1
+
